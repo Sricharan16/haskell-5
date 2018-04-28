@@ -27,4 +27,4 @@ install:
   - cabal install random
 
 script:
-  - ghc --make Run.hs
+  - ghc --make Render.hs
