@@ -27,4 +27,4 @@ install:
   - cabal install random
 
 script:
-  - ghc --make State.hs
+  - ghc --make Run.hs
