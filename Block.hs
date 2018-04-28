@@ -1,13 +1,10 @@
 {-|
 Module      : Block
 Description : This module is constructor for the Blocks in the tetris-game
-Copyright   : (c) Some Guy, 2013
-                  Someone Else, 2014
 License     : POPL-2
-Maintainer  : cs16btech110
+Maintainer  : cs16btech11003@iith.ac.in
 Stability   : experimental
 Portability : POSIX
-
 @This creates a type Block and enumerates it to different possible shapes and randomly selects one of them to insert 
 at the top of the game view@
 -}
