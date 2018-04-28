@@ -27,4 +27,5 @@ install:
   - cabal install random
 
 script:
+  - cd src
   - ghc --make Main.hs

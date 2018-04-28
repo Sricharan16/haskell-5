@@ -1,0 +1,52 @@
+\haddockmoduleheading{State}
+\label{module:State}
+\haddockbeginheader
+{\haddockverb\begin{verbatim}
+module State (
+    State(State, grid, time, dtime, nextrend, block, blockpos, seed, score), 
+    initState,  reset
+  ) where\end{verbatim}}
+\haddockendheader
+
+\begin{quote}
+{\haddockverb\begin{verbatim}
+This module encapsulates the state of the grid and defines a initial state of the grid\end{verbatim}}
+\end{quote}
+
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+data\ State
+\end{tabular}]\haddockbegindoc
+\haddockbeginconstrs
+\haddockdecltt{=} & \haddockdecltt{State} & \\
+                    \haddockdecltt{grid :: Grid} &
+                    \haddockdecltt{time :: Float} &
+                    \haddockdecltt{dtime :: Float} &
+                    \haddockdecltt{nextrend :: Float} &
+                    \haddockdecltt{block :: Block} &
+                    \haddockdecltt{blockpos :: (Int, Int)} &
+                    \haddockdecltt{seed :: StdGen} &
+                    \haddockdecltt{score :: Int} &
+\end{tabulary}\par
+\haddockid{State} encapsulates the state of the grid \par
+
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance\ Show\ State
+\end{tabular}]
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+initState\ ::\ State
+\end{tabular}]\haddockbegindoc
+\haddockid{initState} takes Nothing and returns the initial state \par
+
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+reset\ ::\ State\ ->\ State
+\end{tabular}]\haddockbegindoc
+\haddockid{reset} takes a state and returns the initial state with the seed retained\par
+
+\end{haddockdesc}

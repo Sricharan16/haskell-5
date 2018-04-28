@@ -1,0 +1,28 @@
+\haddockmoduleheading{Run}
+\label{module:Run}
+\haddockbeginheader
+{\haddockverb\begin{verbatim}
+module Run (
+    update,  eventhandling
+  ) where\end{verbatim}}
+\haddockendheader
+
+\begin{quote}
+{\haddockverb\begin{verbatim}
+This module descirbes the functions to take input and move blocks in the grid accordingly\end{verbatim}}
+\end{quote}
+
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+update\ ::\ Float\ ->\ State\ ->\ State
+\end{tabular}]\haddockbegindoc
+\haddockid{update} takes time and a state and updates the state according to the time \par
+
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+eventhandling\ ::\ Event\ ->\ State\ ->\ State
+\end{tabular}]\haddockbegindoc
+\haddockid{eventhandling} takes the input from the keyboard and the current state of the game and moves the blocks accordingly\par
+
+\end{haddockdesc}

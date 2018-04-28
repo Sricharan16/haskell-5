@@ -1,0 +1,132 @@
+\haddockmoduleheading{Block}
+\label{module:Block}
+\haddockbeginheader
+{\haddockverb\begin{verbatim}
+module Block (
+    Block,  validposition,  blockcolor,  randomblock,  rotateclock, 
+    rotateanti,  shapeT,  shapeJ,  shapeS,  shapeZ,  shapeA,  shapeI,  shapeL, 
+    shapeO,  blockcheck
+  ) where\end{verbatim}}
+\haddockendheader
+
+\begin{quote}
+{\haddockverb\begin{verbatim}
+This creates a type Block and enumerates it to different possible shapes and randomly selects one of them to insert 
+at the top of the game view\end{verbatim}}
+\end{quote}
+
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+data\ Block
+\end{tabular}]\haddockbegindoc
+\haddockid{Block} is a data type of List of Integer pairs(coordinates) and a color of the block \par
+
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance\ Show\ Block
+\end{tabular}]
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+validposition
+\end{tabular}]\haddockbegindoc
+\haddockbeginargs
+\haddockdecltt{::} & \haddockdecltt{(Int, Int)} & The 'Int,Int' argument is the block position  \\
+                                                  \haddockdecltt{->} & \haddockdecltt{Block} & the Block is input Block \\
+                                                                                               \haddockdecltt{->} & \haddockdecltt{Bool} & the return value is true if it is valid else false \\
+\end{tabulary}\par
+the \haddockid{validposition} checks whether the position of the block is within the bounds of the grid or not\par
+
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+blockcolor\ ::\ Block\ ->\ Color
+\end{tabular}]\haddockbegindoc
+the \haddockid{blockcolor} takes a block as input and assigns a color to it \par
+
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+randomblock\ ::\ Double\ ->\ Block
+\end{tabular}]\haddockbegindoc
+the \haddockid{randomblock} takes a random seed and returns a block corresponding to it \par
+
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+rotateclock\ ::\ Block\ ->\ Block
+\end{tabular}]\haddockbegindoc
+the \haddockid{rotateclock} takes a block and rotates it clockwise and returns the rotated block \par
+
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+rotateanti\ ::\ Block\ ->\ Block
+\end{tabular}]\haddockbegindoc
+the \haddockid{rotateanti} takes a block and rotates it anti clockwise and returns the rotated block \par
+
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+shapeT\ ::\ Block
+\end{tabular}]\haddockbegindoc
+\haddockid{shapeT} defines a shape of T \par
+
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+shapeJ\ ::\ Block
+\end{tabular}]\haddockbegindoc
+\haddockid{shapeJ} defines a mirror view of the L shape\par
+
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+shapeS\ ::\ Block
+\end{tabular}]\haddockbegindoc
+\haddockid{shapeS} defines a mirror view of the z shape\par
+
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+shapeZ\ ::\ Block
+\end{tabular}]\haddockbegindoc
+\haddockid{shapeZ} defines a 90degrees rotated Z\par
+
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+shapeA\ ::\ Block
+\end{tabular}]\haddockbegindoc
+\haddockid{shapeA} defines a single block of size 1x1\par
+
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+shapeI\ ::\ Block
+\end{tabular}]\haddockbegindoc
+\haddockid{shapeI} defines a shape of 1x4 rectangle\par
+
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+shapeL\ ::\ Block
+\end{tabular}]\haddockbegindoc
+\haddockid{shapeL} defines a shape of L\par
+
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+shapeO\ ::\ Block
+\end{tabular}]\haddockbegindoc
+\haddockid{shapeO} defines a square of size 2x2\par
+
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+blockcheck\ ::\ (Int,\ Int)\ ->\ Block\ ->\ Bool
+\end{tabular}]\haddockbegindoc
+the \haddockid{blockcheck} takes a coordinate point and a block and checks whether the point lies in the block or not \par
+
+\end{haddockdesc}

@@ -1,0 +1,100 @@
+\haddockmoduleheading{Gameview}
+\label{module:Gameview}
+\haddockbeginheader
+{\haddockverb\begin{verbatim}
+module Gameview (
+    Grid,  emptygrid,  atompos,  blockrender,  doescollide,  rownumber, 
+    atomindex,  Atom(Empty, FilledWith),  atomcol,  clearFilledRows
+  ) where\end{verbatim}}
+\haddockendheader
+
+\begin{quote}
+{\haddockverb\begin{verbatim}
+This creates a Grid as a list of rows where each row is a list of atoms and also has functions to clear a filled row and check 
+whether the blocks are colliding\end{verbatim}}
+\end{quote}
+
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+data\ Grid
+\end{tabular}]\haddockbegindoc
+\haddockid{Grid} is a List of rows representing the playing space \par
+
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance\ Show\ Grid
+\end{tabular}]
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+emptygrid\ ::\ Grid
+\end{tabular}]\haddockbegindoc
+\haddockid{emptygrid} is a list of empty rows \par
+
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+atompos\ ::\ Grid\ ->\ {\char 91}(Int,\ Int,\ Atom){\char 93}
+\end{tabular}]\haddockbegindoc
+\haddockid{atompos} assigns the atom coordinates to all the atoms in the grid\par
+
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+blockrender\ ::\ Block\ ->\ (Int,\ Int)\ ->\ Grid\ ->\ Grid
+\end{tabular}]\haddockbegindoc
+\haddockid{blockrender} takes a block and a coordinate point and a grid and returns a grid with the given block in it at the specified location \par
+
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+doescollide\ ::\ Block\ ->\ (Int,\ Int)\ ->\ Grid\ ->\ Bool
+\end{tabular}]\haddockbegindoc
+\haddockid{doescollide} takes a block and a coordinate and a grid and returns true if the given block collides with any atom in the grid\par
+
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+rownumber\ ::\ Grid\ ->\ {\char 91}(Int,\ Row){\char 93}
+\end{tabular}]\haddockbegindoc
+\haddockid{rownumber} assigns the row numbers to the rows \par
+
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+atomindex\ ::\ Row\ ->\ {\char 91}(Int,\ Atom){\char 93}
+\end{tabular}]\haddockbegindoc
+\haddockid{atomindex} assigns the atom index to the atoms in a single row\par
+
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+data\ Atom
+\end{tabular}]\haddockbegindoc
+\haddockbeginconstrs
+\haddockdecltt{=} & \haddockdecltt{Empty} & \\
+\haddockdecltt{|} & \haddockdecltt{FilledWith Color} & \\
+\end{tabulary}\par
+the \haddockid{Atom} is the basic unit of a block which is filled with a particular color \par
+
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance\ Eq\ Atom\\instance\ Show\ Atom
+\end{tabular}]
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+atomcol\ ::\ Atom\ ->\ Color
+\end{tabular}]\haddockbegindoc
+the \haddockid{atomcol} takes an atom and assigns a color to it \par
+
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+clearFilledRows\ ::\ Grid\ ->\ (Grid,\ Int)
+\end{tabular}]\haddockbegindoc
+\haddockid{clearFilledRows} takes the grid and returns a grid with the filled rows removed and the number of filled rows removed\par
+
+\end{haddockdesc}
