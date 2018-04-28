@@ -27,4 +27,4 @@ install:
   - cabal install random
 
 script:
-  - ghc --make Gameview.hs
+  - ghc --make State.hs
